@@ -11,12 +11,12 @@ class VectorDatabase:
         if len(embeddings) != len(chunks):
             raise ValueError("Embeddings and chunks must have the same length.")
 
-        dimension = embeddings.shape[1]
-
         if embeddings.ndim != 2:
             raise ValueError(
                 "Embeddings must be a 2D array."
             )
+
+        dimension = embeddings.shape[1]
 
         if embeddings.shape[0] != len(chunks):
             raise ValueError(
