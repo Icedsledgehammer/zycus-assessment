@@ -8,7 +8,7 @@ def build_final_brief(
     llm_output: str,
 ) -> dict:
 
-    llm_data = json.loads(llm_output)
+    llm_data = llm_output
 
     recent_support_activity = []
 

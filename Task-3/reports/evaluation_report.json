@@ -1,0 +1,400 @@
+{
+  "summary": {
+    "total_cases": 10,
+    "passed_cases": 3,
+    "failed_cases": 7,
+    "average_quality_score": 0.68
+  },
+  "results": [
+    {
+      "case_id": "T1-01",
+      "task": "Task 1",
+      "checks": {
+        "product_area": true,
+        "issue_category": true,
+        "urgency_tier": true,
+        "kb_match": true,
+        "valid_structure": true
+      },
+      "passed": true,
+      "quality_score": 1.0,
+      "output": {
+        "product_area": "Data Ingestion",
+        "issue_category": "Feature Request",
+        "urgency_tier": "P2",
+        "reasoning": "Product is DataBridge Pro. Product area is Data Ingestion. Issue category is Feature Request as the customer requests a new capability (bulk archive operations). Urgency is P2 because the current limitation (only individual archive) prevents an important customer workflow (archiving multiple entries) for 116 users, which is material. Retrieved knowledge base is empty, so the issue does not match any known knowledge base issue.",
+        "matches_known_knowledge_base_issue": false,
+        "relevant_knowledge_base_document": null,
+        "recommended_responder_team": "Data Ingestion Engineering Team",
+        "draft_first_response_message": "Thank you for your request. We note that DataBridge Pro currently does not support bulk archive operations in the Data Ingestion module. Given your team's scale (116 users), this capability is important for scalability. We will escalate this feature request to our Data Ingestion Engineering Team for consideration.",
+        "escalation_required": true,
+        "escalation_reason": "No sufficiently relevant knowledge-base information was retrieved.",
+        "assigned_agent": "Priya Nair"
+      },
+      "llm_judge": {
+        "score": 1.0,
+        "verdict": "PASS",
+        "reasoning": "The system output correctly identifies all expected fields from the evaluation case, including product area, issue category, urgency tier, and that there is no matching KB issue. The response is fully grounded, complete, and useful."
+      }
+    },
+    {
+      "case_id": "T1-02",
+      "task": "Task 1",
+      "checks": {
+        "issue_category": false,
+        "valid_structure": true
+      },
+      "passed": false,
+      "quality_score": 0.5,
+      "output": {
+        "product_area": "Authentication",
+        "issue_category": "Bug",
+        "urgency_tier": "P2",
+        "reasoning": "The ticket describes a consistent error in updating permissions in SecureVault's Authentication module that started after the latest update. This constitutes a critical functionality break affecting all users, qualifying as P2. No relevant knowledge base information is available to address this issue without further investigation.",
+        "matches_known_knowledge_base_issue": false,
+        "relevant_knowledge_base_document": null,
+        "recommended_responder_team": "Authentication Engineering Team",
+        "draft_first_response_message": "We've identified a CHECKSUM_MISMATCH error in SecureVault's Authentication module when updating permissions, affecting all users since the latest update. This critical issue requires immediate escalation to the Authentication engineering team.",
+        "escalation_required": true,
+        "escalation_reason": "No sufficiently relevant knowledge-base information was retrieved.",
+        "assigned_agent": "Carmen Rivera"
+      },
+      "llm_judge": {
+        "score": 0.0,
+        "verdict": "FAIL",
+        "reasoning": "The system output failed to correctly interpret the expected issue category ('How-To', while the system output 'Bug'), and also incorrectly evaluated the urgency tier ('P2' instead of the input's 'P3')."
+      }
+    },
+    {
+      "case_id": "T1-03",
+      "task": "Task 1",
+      "checks": {
+        "issue_category": false,
+        "valid_structure": true
+      },
+      "passed": false,
+      "quality_score": 0.5,
+      "output": {
+        "product_area": "Integrations",
+        "issue_category": "Integration",
+        "urgency_tier": "P3",
+        "reasoning": "The ticket describes a configuration error (missing 'endpoint' field) during HubSpot integration setup. The retrieved knowledge base is empty, so no known issue is identified. The issue does not constitute a complete outage, data loss, or security incident, and there is no indication of critical business workflow impact. Therefore, urgency is P3.",
+        "matches_known_knowledge_base_issue": false,
+        "relevant_knowledge_base_document": null,
+        "recommended_responder_team": "Integration Support Team",
+        "draft_first_response_message": "We don't have specific knowledge base details for this HubSpot integration issue. Please share your configuration steps and exact error messages. We'll escalate to the Integration Support Team for assistance.",
+        "escalation_required": true,
+        "escalation_reason": "No sufficiently relevant knowledge-base information was retrieved.",
+        "assigned_agent": "Marcus Webb"
+      },
+      "llm_judge": {
+        "score": 0.8,
+        "verdict": "PASS",
+        "reasoning": "The system output correctly interprets the task, assesses the urgency as P3 matching the input, and assigns the correct agent. Although the expected issue_category was 'Bug', the system categorizes it as 'Integration' based on the specific integration problem described in the ticket, which is a reasonable and useful interpretation."
+      }
+    },
+    {
+      "case_id": "T1-04",
+      "task": "Task 1",
+      "checks": {
+        "issue_category": false,
+        "valid_structure": true
+      },
+      "passed": false,
+      "quality_score": 0.5,
+      "output": {
+        "product_area": "Bandwidth Limits",
+        "issue_category": "Performance",
+        "urgency_tier": "P2",
+        "reasoning": "The ticket reports slow page loads (55+ seconds) and Bandwidth Limits timeouts affecting 128 users in US-East. This constitutes major performance degradation that materially prevents critical workflows, meeting P2 criteria. The retrieved knowledge base contains no relevant information for this specific scenario.",
+        "matches_known_knowledge_base_issue": false,
+        "relevant_knowledge_base_document": null,
+        "recommended_responder_team": "Bandwidth Limits Engineering Team",
+        "draft_first_response_message": "We've noted your report of slow CloudSync page loads (55+ seconds) and Bandwidth Limits timeouts affecting 128 users in US-East. The retrieved knowledge base does not show a known issue for this scenario. We will investigate and get back to you.",
+        "escalation_required": true,
+        "escalation_reason": "No sufficiently relevant knowledge-base information was retrieved.",
+        "assigned_agent": "Carmen Rivera"
+      },
+      "llm_judge": {
+        "score": 0.4,
+        "verdict": "FAIL",
+        "reasoning": "The system output failed to correctly identify the issue category as 'Feature Request' (as specified in the expected data), instead marking it as 'Performance'. Additionally, it modified the urgency tier from the input's P3 to P2."
+      }
+    },
+    {
+      "case_id": "T1-05",
+      "task": "Task 1",
+      "checks": {},
+      "passed": false,
+      "quality_score": 0.0,
+      "error": "LLM returned invalid JSON."
+    },
+    {
+      "case_id": "T2-01",
+      "task": "Task 2",
+      "checks": {
+        "account_health.status": true,
+        "account_health.usage_trend": true,
+        "recommended_actions": false,
+        "valid_structure": true
+      },
+      "passed": false,
+      "quality_score": 0.75,
+      "output": {
+        "account_health": {
+          "status": "Healthy",
+          "usage_trend": "Increasing",
+          "summary": "Oscorp Solutions (Enterprise, $96,000 ARR) is healthy with increasing usage. No open tickets in last 30 days. Last QBR: 2026-04-26, renewal: 2026-06-24, last login: 10 days ago."
+        },
+        "recent_support_activity": [],
+        "risks": [],
+        "recommended_actions": []
+      },
+      "llm_judge": {
+        "score": 0.8,
+        "verdict": "PASS",
+        "reasoning": "The system output correctly identifies the account status as Healthy and usage trend as Increasing, matching the expected values. However, the expected output required recommended actions, and the system output returned an empty array for recommended actions."
+      }
+    },
+    {
+      "case_id": "T2-02",
+      "task": "Task 2",
+      "checks": {
+        "account_health.status": true,
+        "account_health.usage_trend": true,
+        "risk_detection": true,
+        "recommended_actions": true,
+        "valid_structure": true
+      },
+      "passed": true,
+      "quality_score": 1.0,
+      "output": {
+        "account_health": {
+          "status": "At Risk",
+          "usage_trend": "Inactive",
+          "summary": "Omni Consumer Products (Business, $500k ARR) is at risk: inactive usage (last login 5 days ago), and escalation notes indicate 3 consecutive P1 tickets in last 30 days and decision maker considering competing vendor evaluation."
+        },
+        "recent_support_activity": [
+          {
+            "ticket_id": "TKT-10293",
+            "product": "DataBridge Pro",
+            "product_area": "API",
+            "category": "Data Loss",
+            "urgency": "P2",
+            "status": "Closed",
+            "subject": "DataBridge Pro running extremely slowly for our team",
+            "evidence_quotes": [
+              "Hi Support,\n\nWe've noticed significant performance degradation in DataBridge Pro over the past 12 days. Page loads are taking 119+ seconds and API operations are timing out.\n\nAffected users: 198\nRegion: EU-West\n\nIs there a known issue or maintenance window we should be aware of?",
+              "We've noticed significant performance degradation in DataBridge Pro over the past 12 days. Page loads are taking 119+ seconds and API operations are timing out. Affected users: 198"
+            ]
+          }
+        ],
+        "risks": [
+          {
+            "risk_type": "Account Health",
+            "severity": "high",
+            "source": "account",
+            "reason": "Account health status is marked as At Risk."
+          },
+          {
+            "risk_type": "Usage Inactivity",
+            "severity": "medium",
+            "source": "account",
+            "reason": "Account usage trend is inactive."
+          },
+          {
+            "risk_type": "Churn",
+            "severity": "high",
+            "source": "account",
+            "reason": "Decision maker considering competing vendor evaluation"
+          },
+          {
+            "risk_type": "High Priority Issue",
+            "severity": "medium",
+            "source": "ticket",
+            "reason": "Ticket is classified as P2.",
+            "ticket_id": "TKT-10293",
+            "evidence_quote": "Hi Support,\n\nWe've noticed significant performance degradation in DataBridge Pro over the past 12 days. Page loads are taking 119+ seconds and API operations are timing out.\n\nAffected users: 198\nRegion: EU-West\n\nIs there a known issue or maintenance window we should be aware of?"
+          },
+          {
+            "risk_type": "Operational Impact",
+            "severity": "high",
+            "source": "ticket",
+            "reason": "Ticket contains one or more indicators of operational impact.",
+            "ticket_id": "TKT-10293",
+            "evidence_quote": "We've noticed significant performance degradation in DataBridge Pro over the past 12 days. Page loads are taking 119+ seconds and API operations are timing out. Affected users: 198"
+          }
+        ],
+        "recommended_actions": [
+          "Proactively engage decision maker to address competing vendor evaluation and investigate inactive usage"
+        ]
+      },
+      "llm_judge": {
+        "score": 1.0,
+        "verdict": "PASS",
+        "reasoning": "The system output correctly identifies the account health status ('At Risk') and usage trend ('Inactive'), includes all expected risk types ('Account Health', 'Usage Inactivity', 'Churn'), and provides recommended actions as required by the case specification."
+      }
+    },
+    {
+      "case_id": "T2-03",
+      "task": "Task 2",
+      "checks": {
+        "account_health.status": true,
+        "account_health.usage_trend": true,
+        "recommended_actions": true,
+        "valid_structure": true
+      },
+      "passed": true,
+      "quality_score": 1.0,
+      "output": {
+        "account_health": {
+          "status": "Churning",
+          "usage_trend": "Declining",
+          "summary": "Pinnacle Systems (Starter, 48000 ARR) is churning with declining usage, two P1 tickets in the last 30 days, and the decision maker is evaluating competing vendors."
+        },
+        "recent_support_activity": [],
+        "risks": [
+          {
+            "risk_type": "Churn",
+            "severity": "high",
+            "source": "account",
+            "reason": "Account health status is marked as Churning."
+          },
+          {
+            "risk_type": "Usage Decline",
+            "severity": "medium",
+            "source": "account",
+            "reason": "Account usage trend is declining."
+          },
+          {
+            "risk_type": "Critical Incidents",
+            "severity": "high",
+            "source": "account",
+            "reason": "Account has 2 P1 ticket(s) in the last 30 days."
+          },
+          {
+            "risk_type": "Churn",
+            "severity": "high",
+            "source": "account",
+            "reason": "Decision maker considering competing vendor evaluation"
+          }
+        ],
+        "recommended_actions": [
+          "Engage the decision maker to understand the vendor evaluation process and address concerns",
+          "Identify a replacement for the champion"
+        ]
+      },
+      "llm_judge": {
+        "score": 1.0,
+        "verdict": "PASS",
+        "reasoning": "The system output correctly identifies the account health status as Churning with a declining usage trend, and successfully provides the required recommended actions, matching all criteria specified in the expected output."
+      }
+    },
+    {
+      "case_id": "T2-04",
+      "task": "Task 2",
+      "checks": {
+        "account_health.status": true,
+        "account_health.usage_trend": true,
+        "recommended_actions": false,
+        "valid_structure": true
+      },
+      "passed": false,
+      "quality_score": 0.75,
+      "output": {
+        "account_health": {
+          "status": "Healthy",
+          "usage_trend": "Increasing",
+          "summary": "Polaris Group (Starter) is healthy with $120,000 ARR, increasing usage, 11 open tickets, last QBR: 2025-12-15, renewal: 2026-06-30"
+        },
+        "recent_support_activity": [],
+        "risks": [],
+        "recommended_actions": []
+      },
+      "llm_judge": {
+        "score": 0.5,
+        "verdict": "FAIL",
+        "reasoning": "The expected output required recommended actions (require_recommended_actions: true), but the system output returned an empty list for recommended actions."
+      }
+    },
+    {
+      "case_id": "T2-05",
+      "task": "Task 2",
+      "checks": {
+        "account_health.status": true,
+        "account_health.usage_trend": true,
+        "data_quality_warning": false,
+        "recommended_actions": true,
+        "valid_structure": true
+      },
+      "passed": false,
+      "quality_score": 0.8,
+      "output": {
+        "account_health": {
+          "status": "At Risk",
+          "usage_trend": "Inactive",
+          "summary": "Omni Consumer Products (Business, $500k ARR) is at risk: inactive usage (last login 5 days ago), and escalation notes indicate 3 consecutive P1 tickets in last 30 days and decision maker considering competing vendor evaluation."
+        },
+        "recent_support_activity": [
+          {
+            "ticket_id": "TKT-10293",
+            "product": "DataBridge Pro",
+            "product_area": "API",
+            "category": "Data Loss",
+            "urgency": "P2",
+            "status": "Closed",
+            "subject": "DataBridge Pro running extremely slowly for our team",
+            "evidence_quotes": [
+              "Hi Support,\n\nWe've noticed significant performance degradation in DataBridge Pro over the past 12 days. Page loads are taking 119+ seconds and API operations are timing out.\n\nAffected users: 198\nRegion: EU-West\n\nIs there a known issue or maintenance window we should be aware of?",
+              "We've noticed significant performance degradation in DataBridge Pro over the past 12 days. Page loads are taking 119+ seconds and API operations are timing out. Affected users: 198"
+            ]
+          }
+        ],
+        "risks": [
+          {
+            "risk_type": "Account Health",
+            "severity": "high",
+            "source": "account",
+            "reason": "Account health status is marked as At Risk."
+          },
+          {
+            "risk_type": "Usage Inactivity",
+            "severity": "medium",
+            "source": "account",
+            "reason": "Account usage trend is inactive."
+          },
+          {
+            "risk_type": "Churn",
+            "severity": "high",
+            "source": "account",
+            "reason": "Decision maker considering competing vendor evaluation"
+          },
+          {
+            "risk_type": "High Priority Issue",
+            "severity": "medium",
+            "source": "ticket",
+            "reason": "Ticket is classified as P2.",
+            "ticket_id": "TKT-10293",
+            "evidence_quote": "Hi Support,\n\nWe've noticed significant performance degradation in DataBridge Pro over the past 12 days. Page loads are taking 119+ seconds and API operations are timing out.\n\nAffected users: 198\nRegion: EU-West\n\nIs there a known issue or maintenance window we should be aware of?"
+          },
+          {
+            "risk_type": "Operational Impact",
+            "severity": "high",
+            "source": "ticket",
+            "reason": "Ticket contains one or more indicators of operational impact.",
+            "ticket_id": "TKT-10293",
+            "evidence_quote": "We've noticed significant performance degradation in DataBridge Pro over the past 12 days. Page loads are taking 119+ seconds and API operations are timing out. Affected users: 198"
+          }
+        ],
+        "recommended_actions": [
+          "Proactively engage decision maker to address competing vendor evaluation and investigate inactive usage"
+        ]
+      },
+      "llm_judge": {
+        "score": 1.0,
+        "verdict": "PASS",
+        "reasoning": "The system output correctly matches the expected account health status ('At Risk') and usage trend ('Inactive'). It also successfully includes both data quality/risks and recommended actions as required by the evaluation case."
+      }
+    }
+  ]
+}
